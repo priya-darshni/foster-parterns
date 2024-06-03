@@ -1,0 +1,620 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add this to your existing CSS file */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    transition: background-color 0.3s ease;
+    position: relative; /* Ensure the header has relative positioning for absolute children */
+    z-index: 1000; /* Make sure the header is always on top */
+  }
+  
+  .header:hover {
+    background-color: black; /* Solid black background on hover */
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon, .menu-icon {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .search-icon:hover, .menu-icon:hover {
+    color: #ccc; /* Change color on hover */
+  }
+  
+  .search-box {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    border-radius: 10px; /* Add rounded corners */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-box input:focus {
+    border-color: #888;
+  }
+  
+  .recommended-searches h4 {
+    margin: 10px 0; /* Adjusted margin to align properly */
+    font-size: 16px;
+    color: black;
+  }
+  
+  .recommended-searches ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .recommended-searches li {
+    margin-bottom: 8px;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .recommended-searches li:hover {
+    color: #666; /* Change color on hover */
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-icon:hover {
+    color: #888; /* Change color on hover */
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-menu, .sidebar-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .sidebar-menu li, .sidebar-submenu li {
+    margin-bottom: 15px;
+    color: grey;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-menu li:hover, .sidebar-submenu li:hover {
+    color: black; /* Change color on hover */
+  }
+  
+  .sidebar-submenu {
+    margin-top: 20px;
+  }
+  
+  
+  
+
+.menu {
+    position: relative;
+}
+
+.menu-btn {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #333;
+    width: 300px;
+    border: 1px solid #ccc;
+    z-index: 1;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.menu-content .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-content ul li {
+    margin: 10px 0;
+}
+
+.menu-content ul li strong {
+    color: black;
+}
+
+.menu-content ul li {
+    color: grey;
+}
+
+.menu-content ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu-content ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.logo {
+    font-size: 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu-btn {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.menu-btn:hover + .menu-content,
+.menu-content:hover {
+    display: block;
+}
+
+.banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .banner-image.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .image-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: grey;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-circle.active {
+    background-color: black;
+  }
+  
+  .scroll-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+  }
+/* Add this to your existing CSS file */
+.architecture {
+    padding: 40px 20px;
+    background-color: black; /* Updated background color to black */
+  }
+  
+  .architecture-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* Title color set to white */
+  }
+  
+  .architecture-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .architecture-image {
+    width: 50%;
+  }
+  
+  .architecture-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .architecture-description {
+    width: 50%;
+    padding-left: 20px; /* Add padding to separate from the image */
+    color: white; /* Description color set to white */
+  }
+  
+  .architecture-description p {
+    margin-bottom: 10px;
+  }
+  
+  .architecture-description strong {
+    font-weight: bold;
+  }
+/* Add this to your existing CSS file */
+.expertise {
+    padding: 40px 20px;
+    background-color: black; /* Updated background color to black */
+  }
+  
+  .expertise-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* Title color set to white */
+  }
+  
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .expertise-card {
+    padding: 20px;
+    background-color: black; /* Updated background color to black */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensure image doesn't overflow card */
+  }
+  
+  .expertise-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .expertise-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .expertise-card-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white; /* Title color set to white */
+  }
+
+  /* Add this to your existing CSS file */
+.news {
+    padding: 40px 20px;
+    background-color: black;
+    color: white;
+  }
+  
+  .news-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .news-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .news-image {
+    width: 50%;
+  }
+  
+  .news-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .news-description {
+    width: 50%;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .news-subscribe {
+    margin-top: 20px;
+  }
+  
+  .news-subscribe input[type="email"] {
+    padding: 10px;
+    width: 100%; /* Adjusted width to take full width */
+    margin-bottom: 10px; /* Added margin-bottom */
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .news-subscribe button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Add this to your existing CSS file */
+.climate {
+    padding: 40px 20px;
+    background-color: black; /* Updated background color to black */
+    color: white; /* Updated text color to white */
+  }
+  
+  .climate-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .climate-content {
+    display: flex;
+  }
+  
+  .climate-image {
+    width: 50%;
+    position: relative;
+  }
+  
+  .climate-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .climate-description {
+    width: 50%;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .climate-description strong {
+    font-weight: bold;
+  }
+  /* Add this to your existing CSS file */
+.studio {
+    padding: 40px 20px;
+    background-color: black; /* Updated background color to black */
+    color: white; /* Updated text color to white */
+  }
+  
+  .studio-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .studio-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .studio-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensure image doesn't overflow card */
+  }
+  
+  .studio-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .studio-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .studio-card-title {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+  }
+ 
+/* Add this to your existing CSS file */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    width: 50%;
+  }
+  
+  .footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer-links li {
+    margin-right: 20px;
+  }
+  
+  .right-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .social-media {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .scroll-to-top {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-separator {
+    border-top: 1px dashed white;
+    margin-bottom: 20px;
+  }
+  
+  .footer-legal {
+    text-align: center;
+  }
+  
